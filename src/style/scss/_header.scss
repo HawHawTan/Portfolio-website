@@ -1,0 +1,16 @@
+header{
+    background-color: green;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    ul{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 1rem 0;
+        margin: 0;
+        li{
+            list-style-type: none;
+            margin: 0;
+        }
+    }
+}

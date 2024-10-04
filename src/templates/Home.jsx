@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
+import Posts from './Posts'
 
 const Home = () => {
     const restPath = restBase + 'pages/9'
@@ -23,9 +24,14 @@ const Home = () => {
     return (
         <>
             { restData ? (  
-            <article id={`post-${restData.id}`}>
-                <h1>{restData.title.rendered}</h1>
-            </article>
+            <>
+                <section id='title'>
+                    <h1 id={`post-${restData.id}`}>{restData.title.rendered}</h1>
+                </section>
+                <section id='home-page-work'>
+                    <Posts/>
+                </section>
+            </>
             ) : (
                 // need to add something here, maybe a loader of something
                 // You can add a loader, message, or leave it empty

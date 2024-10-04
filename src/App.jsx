@@ -2,7 +2,6 @@ import { Route, Routes, Link, NavLink } from 'react-router-dom'
 import Home from './templates/Home'
 import Post from './templates/Post'
 import Posts from './templates/Posts'
-import './App.css'
 
 function App() {
 

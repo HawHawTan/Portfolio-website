@@ -7,7 +7,7 @@ import { restBase } from '../utilities/Utilities'
 const Posts = () => {
     const restPath = restBase + 'posts?_embed'
     const [restData, setData] = useState([])
-    const [isLoaded, setLoadStatus] = useState(false)
+    const [isLoaded, setLoadStatus] = useState(false) // if i want to add the load 
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,23 +25,16 @@ const Posts = () => {
     
     return (
         <>
-        { isLoaded ?
-            <>
-                <h1>Work</h1>
-                {restData.map(post => 
-                    <article key={post.id} id={`post-${post.id}`}>
-                        {post.featured_media !== 0 && post._embedded &&
-                            <FeaturedImage featuredImageObject={post._embedded['wp:featuredmedia'][0]} />
-                        }
-                        <Link to={`/works/${post.slug}`}><h2>{post.title.rendered}</h2></Link>
-                        <p>By {post._embedded.author[0].name}</p>
-                        <div className="entry-content" dangerouslySetInnerHTML={{__html:post.excerpt.rendered}}></div>
-                    </article>
-                )}
-            </>
-        : 
-            null
-        }
+            <h1>Work</h1>
+            {restData.map(post => 
+                <article key={post.id} id={`post-${post.id}`}>
+                    {post.featured_media !== 0 && post._embedded &&
+                        <FeaturedImage featuredImageObject={post._embedded['wp:featuredmedia'][0]} />
+                    }
+                    <Link to={`/works/${post.slug}`}><h2>{post.title.rendered}</h2></Link>
+                    <div className="entry-content" dangerouslySetInnerHTML={{__html:post.excerpt.rendered}}></div>
+                </article>
+            )}
         </>
     )
 }
