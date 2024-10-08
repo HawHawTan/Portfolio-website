@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { restBase } from '../utilities/Utilities'
 // import FeaturedImage from '../utilities/FeaturedImage'
 
-const Posts = () => {
+const Posts = ({where = "work-posts"}) => {
     const restPath = restBase + 'posts?_embed'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false) // if i want to add the load 
@@ -27,7 +27,7 @@ const Posts = () => {
         <>
             <h1>Work</h1>
             {restData.map(post => 
-                <article key={post.id} id={`post-${post.id}`}>
+                <article key={post.id} id={`${where}`}>
                     {post.featured_media !== 0 && post._embedded &&
                         <FeaturedImage featuredImageObject={post._embedded['wp:featuredmedia'][0]} />
                     }
