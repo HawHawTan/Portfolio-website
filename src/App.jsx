@@ -1,10 +1,24 @@
 import { Route, Routes, Link, NavLink } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
 import Home from './templates/Home'
 import Post from './templates/Post'
 import Posts from './templates/Posts'
 
 function App() {
+  const [scrollY, setScrollY] = useState(0);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setScrollY(scrollPosition);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       <header id="masthead" className="site-header">
@@ -20,7 +34,7 @@ function App() {
           </ul>
         </nav>
       </header>
-      <main id="main">
+      <main style={{ backgroundPosition: `0% ${scrollY / 15}%` }} id="main">
         <Routes>
           <Route path='/' element={<Home />} />
          <Route path='/works' element={<Posts />} />

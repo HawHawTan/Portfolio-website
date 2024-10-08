@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    height: 200vh; // ensure there's enough scrollable content
+  }
+  
+  main {
+    height: 200vh;
+    background: rgb(33,38,49);
+    background: linear-gradient(180deg, rgba(33,38,49,1) 0%, rgba(102,117,151,1) 89%);
+    transition: all 1s ease;
+    
+    color: white;
+    font-size: 1.5rem;
+    background-size: 100% 180%;
+  
+    h1, p {
+      text-align: center;
+    }
+  }
+  
+
+  
