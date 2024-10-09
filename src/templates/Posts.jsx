@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 // import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
-// import FeaturedImage from '../utilities/FeaturedImage'
+import FeaturedImage from '../utilities/FeaturedImage'
 
-const Posts = ({where = "work-posts"}) => {
+const Posts = ({where = "work-page"}) => {
     const restPath = restBase + 'posts?_embed'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false) // if i want to add the load 
@@ -22,19 +22,30 @@ const Posts = ({where = "work-posts"}) => {
         }
         fetchData()
     }, [restPath])
+    console.log(restData[0]);
     
     return (
         <>
-            <h1>Work</h1>
-            {restData.map(post => 
-                <article key={post.id} id={`${where}`}>
-                    {post.featured_media !== 0 && post._embedded &&
-                        <FeaturedImage featuredImageObject={post._embedded['wp:featuredmedia'][0]} />
-                    }
-                    <Link to={`/works/${post.slug}`}><h2>{post.title.rendered}</h2></Link>
-                    <div className="entry-content" dangerouslySetInnerHTML={{__html:post.excerpt.rendered}}></div>
-                </article>
-            )}
+            <section>
+                <h1>Work</h1>
+                {restData.map(post => 
+                    <article key={post.id} id={`${where}`}>
+                        {/* <img src={} alt="" /> */}
+                        {post.featured_media !== 0 && post._embedded &&
+                            <Link to={`/works/${post.slug}`}>
+                                <FeaturedImage 
+                                featuredImageObject={post._embedded['wp:featuredmedia'][0]} 
+                                size="medium" 
+                                />
+                            </Link>
+                        }
+                        <Link to={`/works/${post.slug}`}><h2>{post.title.rendered}</h2></Link>
+                        {where == "work-page" && 
+                        <div className="entry-content" dangerouslySetInnerHTML={{__html:post.excerpt.rendered}}></div>}
+                        <Link to={`/works/${post.slug}`}><p className='more-details-button'>More Details</p></Link>
+                    </article>
+                )}
+            </section>
         </>
     )
 }

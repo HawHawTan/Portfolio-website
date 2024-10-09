@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 // import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
-// import FeaturedImage from '../utilities/FeaturedImage'
+import FeaturedImage from '../utilities/FeaturedImage'
 
 const Post = () => {
     const { slug } = useParams();

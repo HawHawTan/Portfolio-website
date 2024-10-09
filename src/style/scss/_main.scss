@@ -1,10 +1,14 @@
 body {
     margin: 0;
     height: 200vh; // ensure there's enough scrollable content
+    a{
+      text-decoration: none;
+      color: $white-color;
+    }
   }
   
   main {
-    height: 200vh;
+    height: 250vh; // help is there a better way than vh cause is base on how many works i have
     background: rgb(33,38,49);
     background: linear-gradient(180deg, rgba(33,38,49,1) 0%, rgba(102,117,151,1) 89%);
     transition: all 1s ease;

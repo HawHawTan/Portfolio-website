@@ -1,8 +1,9 @@
 header{
-    background-color: green;
+    background-color: $light-blue-background-color;
     bottom: 0;
     position: fixed;
     width: 100%;
+    z-index: 22;
     ul{
         display: flex;
         justify-content: space-evenly;
@@ -11,6 +12,9 @@ header{
         li{
             list-style-type: none;
             margin: 0;
+            a{
+                font-family: 500;
+            }
         }
     }
 }
