@@ -26,7 +26,7 @@ const Posts = ({where = "work-page"}) => {
     
     return (
         <>
-            <section>
+            <section id="work">
                 <h1>Work</h1>
                 {restData.map(post => 
                     <article key={post.id} id={`${where}`}>
@@ -42,7 +42,7 @@ const Posts = ({where = "work-page"}) => {
                         <Link to={`/works/${post.slug}`}><h2>{post.title.rendered}</h2></Link>
                         {where == "work-page" && 
                         <div className="entry-content" dangerouslySetInnerHTML={{__html:post.excerpt.rendered}}></div>}
-                        <Link to={`/works/${post.slug}`}><p className='more-details-button'>More Details</p></Link>
+                        <Link to={`/works/${post.slug}`}><p id='more-details-button'>More Details</p></Link>
                     </article>
                 )}
             </section>

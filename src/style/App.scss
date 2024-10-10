@@ -1,6 +1,10 @@
 @import "normalize.css";
 @import "./scss/colors.scss";
-@import "./scss/header.scss";
-@import "./scss/title.scss";
-@import "./scss/main.scss";
-@import "./scss/work-cards.scss";
+@import "./scss/component/header";
+@import "./scss/component/title.scss";
+@import "./scss/component/main.scss";
+@import "./scss/component/work-cards.scss";
+
+
+// pages
+@import "./scss/pages/works.scss";

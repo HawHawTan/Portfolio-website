@@ -1,10 +1,11 @@
 // moblie 
-#home-posts{
+#home-posts,#work-page{
     background-color: $light-blue-background-color;
     position: relative;
     border-radius: 50px;
-    width: 18.75rem;
+    width: 18.75rem; //help
     margin: 0 auto;
+    border: 1.5px solid $white-color;
     a{
         text-decoration: none;
     }
@@ -16,14 +17,23 @@
         margin: 0;
         text-align: center;
     }
-    p::after{
+    #more-details-button::after{
         margin-left: 0.5rem;
         content: "→";
     }
-    p{
+    #more-details-button{
         padding: 1rem 0;
         font-size: 1rem;
         margin-right: 2rem;
         text-align: right;
+    }
+}
+
+
+#work-page{
+    background-color: $dark-blue-background-color;
+    p{
+        padding: 1.2rem;
+        font-size: 1rem;
     }
 }
