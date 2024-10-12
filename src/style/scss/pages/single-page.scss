@@ -1,0 +1,33 @@
+
+.single-page{
+    padding: 0 1rem;
+    h1{
+        margin: 0;
+        padding: 2rem 0;
+    }
+    #featuredImg{
+        width: 100%;
+    }  
+
+    p{
+        font-size: 1.3rem;
+    }
+  
+}
+.projectSummary{
+    padding: 0 2rem;
+    margin: 2rem 0;
+    h3{
+        text-align: center;
+        font-size: 2rem;
+    }
+    ul{
+        margin:0;
+        padding: 0;
+    }
+    .description-text{
+        display: block;
+        // padding-left: 2rem;
+        margin-top: 1rem;
+    }
+}

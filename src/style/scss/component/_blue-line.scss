@@ -1,0 +1,18 @@
+
+li{
+    position: relative;
+    padding-left: 20px; /* Add space for the line */
+    list-style: none;
+    margin-bottom: 1.3rem;
+ 
+}
+.blue-border::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0; 
+    width: 0.6rem; 
+    border-radius: 2rem;
+    background-color: $secondary-color;
+}
