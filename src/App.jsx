@@ -1,7 +1,7 @@
 import { Route, Routes, Link, NavLink } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Home from "./templates/Home";
-import Post from "./templates/Post";
+import SinglePage from "./templates/Single-page";
 import Posts from "./templates/Posts";
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/works" element={<Posts />} />
-          <Route path="/works/:slug" element={<Post />} />
+          <Route path="/works/:slug" element={<SinglePage />} />
           {/* <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} /> */}
         </Routes>

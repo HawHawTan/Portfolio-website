@@ -5,7 +5,7 @@ import ProjectSummary from "../component/ProjectSummary"
 import { restBase } from '../utilities/Utilities'
 import FeaturedImage from '../utilities/FeaturedImage'
 
-const Post = () => {
+const SinglePage = () => {
     const { slug } = useParams();
     const restPath = restBase + `posts?slug=${slug}&_embed`
     const [restData, setData] = useState([])
@@ -27,18 +27,23 @@ const Post = () => {
         }
         fetchData()
     }, [restPath])
+    
     useEffect(() => {
         const fetchNextProject = async () => {
           const response = await fetch(restBase + `posts?_embed`);
           if (response.ok) {
             const allPosts = await response.json();
             const currentIndex = allPosts.findIndex((post) => post.slug === slug);
-            console.log(allPosts);
-            console.log(currentIndex);
             // Set the next project if it exists
-            if (currentIndex !== -1 && currentIndex < allPosts.length - 1) {
-              setNextProject(allPosts[currentIndex + 1]);
+            if ((currentIndex !== -1 && currentIndex !== 0) && currentIndex <= allPosts.length - 1 ) {
+                setNextProject(allPosts[currentIndex - 1]);
             }
+            else{
+                setNextProject(allPosts[allPosts.length -1]);
+
+                console.log("it work");
+                
+            } 
           }
         };
         fetchNextProject();
@@ -87,4 +92,4 @@ const Post = () => {
     )
 }
 
-export default Post
+export default SinglePage
