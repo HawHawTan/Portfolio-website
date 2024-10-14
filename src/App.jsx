@@ -38,7 +38,7 @@ function App() {
           </ul>
         </nav>
       </header>
-      <main style={{ backgroundPosition: `0% ${scrollY / 15}%` }}>
+      <main style={{ backgroundPosition: `0% ${scrollY / 30}%` }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/works" element={<Posts />} />

@@ -6,7 +6,7 @@ const ProjectSummary = ({acfData,fieldKey,title}) => {
 
   return (
     <div className="projectSummary">
-      <h3>{title}:</h3>
+      <h2>{title}</h2>
       <ul>
         {acfData[fieldKey].map((feature, index) => (
           <li key={index} className='blue-border'>

@@ -1,6 +1,9 @@
-
+h1,h2,h3{
+    color: $secondary-color;
+}
 .single-page{
     padding: 0 1rem;
+  
     h1{
         margin: 0;
         padding: 2rem 0;
@@ -12,14 +15,39 @@
     p{
         font-size: 1.3rem;
     }
-  
+    
+    .wp-block-buttons{
+        display: flex;
+        justify-content: space-around;
+        margin: 2.5rem 0;
+        .wp-block-button{
+            a{
+                background-color: $white-color;
+                border: 2px solid $black-color;
+                border-radius: 2rem;
+                padding: 0.2rem 1.5rem;
+                color: $black-color;
+                
+            }
+        }
+    }
+    .wp-block-video{
+        video{
+            width: 100%;
+            // opacity: 0.7; // Control transparency of the video
+            // filter: brightness(1);
+            position: relative;
+        }
+       
+    }
 }
 .projectSummary{
     padding: 0 2rem;
     margin: 2rem 0;
-    h3{
+    h2{
         text-align: center;
-        font-size: 2rem;
+        font-size: 3rem;
+
     }
     ul{
         margin:0;
@@ -31,3 +59,15 @@
         margin-top: 1rem;
     }
 }
+
+
+#up-next-title{
+    text-align: center;
+}
+
+#up-next{
+    h3{
+        color: $white-color;
+    }
+}
+
