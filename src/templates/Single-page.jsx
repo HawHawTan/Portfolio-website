@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 // import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
 import FeaturedImage from '../utilities/FeaturedImage'
+import ScrollReverseVide from '../utilities/ScrollReverseVideo'
 
 // loading components
 import ProjectSummary from "../components/ProjectSummary"
@@ -24,9 +25,6 @@ const SinglePage = () => {
                 setData(data[0])
                 setLoadStatus(true)
                 setAcfData(data[0].acf);
-                console.log('====================================');
-                console.log(data);
-                console.log('====================================');
             } else {
                 setLoadStatus(false)
             }
@@ -43,6 +41,7 @@ const SinglePage = () => {
                     {/* {restData.featured_media !== 0 && restData._embedded &&
                         <FeaturedImage featuredImageObject={restData._embedded['wp:featuredmedia'][0]} />
                     } */}
+                    {/* <ScrollReverseVide/>   */}{/* if i want reload the video when i am back to the top*/}
                     <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}}></div>
                 </section>
                 <section>

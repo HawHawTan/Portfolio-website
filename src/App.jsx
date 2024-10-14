@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Home from "./templates/Home";
 import SinglePage from "./templates/Single-page";
 import Posts from "./templates/Posts";
+import ScrollToTop from "./utilities/ScrollToTop";
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
@@ -21,6 +22,7 @@ function App() {
   }, []);
   return (
     <>
+    <ScrollToTop/>
       <header id="masthead" className="site-header">
         <div className="site-branding">{/* add my logo */}</div>
         <nav className="site-navigation">
