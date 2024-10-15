@@ -9,21 +9,16 @@ body {
   
   main {
     height: 250vh; // help is there a better way than vh cause is base on how many works i have
-    background: rgb(33,38,49);
-    background: linear-gradient(180deg, rgba(33,38,49,1) 0%, rgba(102,117,151,1) 89%);
+    // background-color: rgb(32,38,50);
+    background: linear-gradient(180deg,rgb(32,38,50) 25%, rgba(102,117,151,1) 60%);
     transition: all 1s ease;
-    
+    // rgb(32,38,50)
     color: white;
     font-size: 1.5rem;
     background-size: 100% 180%;
   
     h1, p {
       text-align: center;
-    }
-  }
-  @media (min-width: 1028px) {
-    main{
-      background:green;
     }
   }
   
