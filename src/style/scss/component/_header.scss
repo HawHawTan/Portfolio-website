@@ -1,9 +1,12 @@
 header{
-    background-color: $light-blue-background-color;
+    // background-color: $light-blue-background-color;
+    background-color: $dark-blue-background-color;
     bottom: 0;
     position: fixed;
     width: 100%;
     z-index: 22;
+    // border: 0.5px solid $white-color;
+    // border-radius: 1rem;
     ul{
         display: flex;
         justify-content: space-evenly;

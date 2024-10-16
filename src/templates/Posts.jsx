@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { restBase } from '../utilities/Utilities'
 import FeaturedImage from '../utilities/FeaturedImage'
 
-const Posts = ({where = "work-page"}) => {
+const Posts = ({whichPage = "work-page", numberOfProject = "5"}) => {
     const restPath = restBase + 'posts?_embed'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false) // if i want to add the load 
@@ -28,23 +28,25 @@ const Posts = ({where = "work-page"}) => {
         <>
             <section id="work">
                 <h1>Work</h1>
-                {restData.map(post => 
-                    <article key={post.id} id={`${where}`}>
-                        {/* <img src={} alt="" /> */}
-                        {post.featured_media !== 0 && post._embedded &&
-                            <Link to={`/works/${post.slug}`}>
-                                <FeaturedImage 
-                                featuredImageObject={post._embedded['wp:featuredmedia'][0]} 
-                                size="medium" 
-                                />
-                            </Link>
-                        }
-                        <Link to={`/works/${post.slug}`}><h2>{post.title.rendered}</h2></Link>
-                        {where == "work-page" && 
-                        <div className="entry-content" dangerouslySetInnerHTML={{__html:post.excerpt.rendered}}></div>}
-                        <Link to={`/works/${post.slug}`}><p id='more-details-button'>More Details</p></Link>
-                    </article>
-                )}
+                    <div id='work-section'>
+                    {restData.slice(0, numberOfProject).map(post => 
+                        <article key={post.id} id={`${whichPage}`}>
+                            {/* <img src={} alt="" /> */}
+                            {post.featured_media !== 0 && post._embedded &&
+                                <Link to={`/works/${post.slug}`}>
+                                    <FeaturedImage 
+                                    featuredImageObject={post._embedded['wp:featuredmedia'][0]} 
+                                    size="medium" 
+                                    />
+                                </Link>
+                            }
+                            <Link to={`/works/${post.slug}`}><h2>{post.title.rendered}</h2></Link>
+                            {whichPage == "work-page" && 
+                            <div className="entry-content" dangerouslySetInnerHTML={{__html:post.excerpt.rendered}}></div>}
+                            <Link to={`/works/${post.slug}`}><p id='more-details-button'>More Details</p></Link>
+                        </article>
+                    )}
+                    </div>
             </section>
         </>
     )

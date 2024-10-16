@@ -29,7 +29,7 @@ const Home = () => {
                     <h1 id={`post-${restData.id}`}>{restData.title.rendered}</h1>
                 </section>
                 <section id='home-page-work'>
-                    <Posts where= "home-posts"/>
+                    <Posts whichPage= "home-posts" numberOfProject='2'/>
                 </section>
             </>
             ) : (

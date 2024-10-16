@@ -6,8 +6,8 @@ import FeaturedImage from '../utilities/FeaturedImage'
 import ScrollReverseVide from '../utilities/ScrollReverseVideo'
 
 // loading components
-import ProjectSummary from "../components/ProjectSummary"
-import UpNext from "../components/UpNext"
+import ProjectSummary from "../utilities/ProjectSummary"
+import UpNext from "../utilities/UpNext"
 
 const SinglePage = () => {
     const { slug } = useParams();
