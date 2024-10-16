@@ -5,7 +5,7 @@ const ProjectSummary = ({acfData,fieldKey,title}) => {
   }
 
   return (
-    <div className="projectSummary">
+    <section className="projectSummary">
       <h2>{title}</h2>
       <ul>
         {acfData[fieldKey].map((feature, index) => (
@@ -16,7 +16,7 @@ const ProjectSummary = ({acfData,fieldKey,title}) => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 

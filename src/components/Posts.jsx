@@ -26,11 +26,10 @@ const Posts = ({whichPage = "work-page", numberOfProject = "5"}) => {
     
     return (
         <>
-            <section id="work">
-                <h1>Work</h1>
-                    <div id='work-section'>
+            <div id="work">
+                    <div className={`${whichPage}-section`}>
                     {restData.slice(0, numberOfProject).map(post => 
-                        <article key={post.id} id={`${whichPage}`}>
+                        <article key={post.id} className={`${whichPage}`}>
                             {/* <img src={} alt="" /> */}
                             {post.featured_media !== 0 && post._embedded &&
                                 <Link to={`/works/${post.slug}`}>
@@ -40,14 +39,16 @@ const Posts = ({whichPage = "work-page", numberOfProject = "5"}) => {
                                     />
                                 </Link>
                             }
-                            <Link to={`/works/${post.slug}`}><h2>{post.title.rendered}</h2></Link>
-                            {whichPage == "work-page" && 
-                            <div className="entry-content" dangerouslySetInnerHTML={{__html:post.excerpt.rendered}}></div>}
-                            <Link to={`/works/${post.slug}`}><p id='more-details-button'>More Details</p></Link>
+                            <div className={`${whichPage}-content`}> 
+                                <Link to={`/works/${post.slug}`}><h3>{post.title.rendered}</h3></Link>
+                                {whichPage == "work-page" && 
+                                <div className="entry-content" dangerouslySetInnerHTML={{__html:post.excerpt.rendered}}></div>}
+                                <Link to={`/works/${post.slug}`}><p id='more-details-button'>More Details</p></Link>
+                            </div>
                         </article>
                     )}
                     </div>
-            </section>
+            </div>
         </>
     )
 }

@@ -1,24 +1,27 @@
 // moblie 
-#work-section{
+.home-posts-section,.work-page-section{
     display: flex;
     gap: 2rem;
     flex-direction: column;
-    // height: 100vh;   
+    // height: 100vh;
     align-items: center;
-    #home-posts,#work-page, #up-next{
+    .home-posts,.work-page, #up-next{
         background-color: $light-blue-background-color;
         position: relative;
         border-radius: 50px;
-        width: 18.75rem; //help
+        width: 15.625rem; // is good
         // margin: 0 auto;
         border: 1.5px solid $white-color;
         a{
             text-decoration: none;
         }
+        #featuredImg{
+            width: 100%;
+        }
         h2{
             font-size: 1.6em;
         }
-        h2,p{
+        h3,p{
             color: $white-color;
             margin: 0;
             text-align: center;
@@ -37,7 +40,7 @@
 }
 
 
-#work-page{
+.work-page{
     background-color: $dark-blue-background-color;
     p{
         padding: 1.2rem;
@@ -45,9 +48,18 @@
     }
 }
 
-@media (min-width: 64em) {
- .home-posts{
+@media (min-width: 48em) {
+.home-posts{
     margin: 0;
  }
- 
+
+.home-posts-section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+    // width: 70%;
+    // margin: 0 auto;
+ } 
 }

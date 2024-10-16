@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
-import Posts from './Posts'
+import Posts from '../components/Posts'
 
 const Home = () => {
     const restPath = restBase + 'pages/9'
@@ -29,6 +29,7 @@ const Home = () => {
                     <h1 id={`post-${restData.id}`}>{restData.title.rendered}</h1>
                 </section>
                 <section id='home-page-work'>
+                    <h2>Work</h2>
                     <Posts whichPage= "home-posts" numberOfProject='2'/>
                 </section>
             </>

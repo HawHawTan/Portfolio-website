@@ -1,6 +1,12 @@
-$white-color : #ffffff;
+$white-color: #ffffff;
 $black-color: #323232;
-$light-blue-background-color : rgb(33,38,49,0.3);
-$dark-blue-background-color : rgb(33,38,49,1);
+$light-blue-background-color: rgb(33, 38, 49, 0.3);
+$dark-blue-background-color: rgb(33, 38, 49, 1);
 // #212631
-$secondary-color: #C7DEFF;
+$secondary-color: #c7deff;
+
+// @mixin grid($c: 1fr 1fr, $r) {
+//   display: grid;
+//   grid-template-columns: $c;
+//   grid-template-rows: $r;
+// }

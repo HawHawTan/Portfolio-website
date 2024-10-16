@@ -37,21 +37,20 @@ const SinglePage = () => {
         { isLoaded ?
             <>
                 <section id={`post-${restData.id}`} className="single-page">
-                    <h1 id='mobile-h1'>{restData.title.rendered}</h1>
                     {/* {restData.featured_media !== 0 && restData._embedded &&
                         <FeaturedImage featuredImageObject={restData._embedded['wp:featuredmedia'][0]} />
                     } */}
                     {/* <ScrollReverseVide/>   */}{/* if i want reload the video when i am back to the top*/}
                     <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}}></div>
                 </section>
-                <section id='projectSummary-section'>
+                <div id='projectSummary-div'>
                     {acfData && (
                             <>
                                 <ProjectSummary acfData={acfData} fieldKey="key_features" title="key Features"/>                            
                                 <ProjectSummary acfData={acfData} fieldKey="technical_stack" title="Technical Stack"/>                            
                                 <ProjectSummary acfData={acfData} fieldKey="challenges" title="Challenges"/>                            
                             </>)}
-                </section>
+                </div>
                 <h2 id="up-next-title">Up Next</h2>
                 <UpNext slug={slug}/>
             </>

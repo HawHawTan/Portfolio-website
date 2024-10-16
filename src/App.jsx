@@ -1,10 +1,10 @@
 import { Route, Routes, Link, NavLink } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 // templates
-import Home from "./templates/Home";
-import SinglePage from "./templates/Single-page";
-import Posts from "./templates/Posts";
-import AboutMe from "./templates/About-Me";
+import Home from "./pages/Home";
+import SinglePage from "./components/Single-page";
+import Works from "./pages/Works";
+import AboutMe from "./pages/About-Me";
 
 import ScrollToTop from "./utilities/ScrollToTop";
 import logo from "./assets/icon.png"
@@ -42,7 +42,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Works" element={<Posts />} />
+          <Route path="/Works" element={<Works />} />
           <Route path="/Works/:slug" element={<SinglePage />} />
            <Route path='/AboutMe' element={<AboutMe />} />
           {/*<Route path='/contact' element={<Contact />} /> */}
