@@ -1,11 +1,12 @@
 // moblie 
-.home-posts-section,.work-page-section{
+.home-posts-section,.work-page-section,.up-next{
     display: flex;
     gap: 2rem;
     flex-direction: column;
     // height: 100vh;
     align-items: center;
-    .home-posts,.work-page, #up-next{
+    margin: 2rem 0;
+    .home-posts,.work-page, .up-next-card{
         background-color: $light-blue-background-color;
         position: relative;
         border-radius: 50px;

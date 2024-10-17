@@ -1,0 +1,24 @@
+$white-color: #ffffff;
+$black-color: #323232;
+$light-blue-background-color: rgb(33, 38, 49, 0.3);
+$dark-blue-background-color: rgb(33, 38, 49, 1);
+// #212631
+
+// use ##212631 for macbook bg 16:9
+// https://www.vantajs.com/?effect=dots#(backgroundAlpha:1,backgroundColor:#212631,color:#c7deff,color2:#c7deff,gyroControls:!f,minHeight:200,minWidth:200,mouseControls:!t,scale:1,scaleMobile:1,showLines:!f,size:1.3,spacing:100,touchControls:!t)
+// https://www.reddit.com/r/webdev/comments/15x3eph/38_websites_you_can_use_for_cool_backgrounds/
+$secondary-color: #c7deff;
+
+
+
+
+//font size
+$moblie-h1-font:3rem;
+$moblie-h2-font:2.5rem;
+$moblie-p-font:1.2rem;
+$moblie-span-font:1.3rem;
+// @mixin grid($c: 1fr 1fr, $r) {
+//   display: grid;
+//   grid-template-columns: $c;
+//   grid-template-rows: $r;
+// }

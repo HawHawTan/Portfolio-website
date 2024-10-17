@@ -25,9 +25,9 @@ function UpNext({slug}) {
   return (
     <>
         {nextProject && (
-            <section id="up-next">
+            <section className="up-next">
                 <Link to={`/works/${nextProject.slug}`}>
-                    <div id="up-next-card">
+                    <div className="up-next-card">
                     <h3>{nextProject.title.rendered}</h3>
                     <p>More Details ➔</p>
                     </div>
