@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 // import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
-import FeaturedImage from '../utilities/FeaturedImage'
-import ScrollReverseVide from '../utilities/ScrollReverseVideo'
 
 // loading components
 import ProjectSummary from "../utilities/ProjectSummary"

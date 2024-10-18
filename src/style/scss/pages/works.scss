@@ -1,4 +1,5 @@
 #work {
+  position: relative;
   h1 {
     padding: 2rem 0;
     margin: 0;
@@ -31,7 +32,6 @@
     flex-direction: row-reverse;
 
     img {
-      margin-left: 2rem;
       margin-right: 0; // Remove right margin
     }
   }

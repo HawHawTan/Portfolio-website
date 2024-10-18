@@ -1,44 +1,57 @@
 body {
-    margin: 0;
-    background-color: rgb(32,38,50);
-    // height: 200vh; // ensure there's enough scrollable content
-    a{
-      text-decoration: none;
-      color: $white-color;
-    }
-    h1{
-      font-size:$moblie-h1-font;
-    }
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  // background-color: rgb(32,38,50);
+  // height: 200vh; // ensure there's enough scrollable content
+  a {
+    text-decoration: none;
+    color: $white-color;
   }
-  #top-left-icon {
-    // position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 80px;  /* Adjust the size as needed */
-    height: auto;
-    z-index: 1000; /* Ensure it stays on top */
+  h1 {
+    font-size: $moblie-h1-font;
   }
+
+  #vantaBG {
+    // position: absolute;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100vw;
+    min-height: 100vh;
+  }
+}
+#top-left-icon {
+  // position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 80px; /* Adjust the size as needed */
+  height: auto;
+  z-index: 1000; /* Ensure it stays on top */
+}
+main {
+  min-height: 170vh;
+  // background: linear-gradient(180deg,rgb(32,38,50), rgba(102,117,151,1));
+  // background: linear-gradient(180deg, rgba(32,38,50,1) 0%, rgba(102,117,151,1) 95%);
+  // background: linear-gradient(180deg, rgba(32,38,50,1) 0%, rgba(33,38,49,1) 95%);
+  // background: linear-gradient(180deg,rgba(32, 38, 50, 1) 0%, rgba(32, 38, 50, 1) 33%, rgba(102, 117, 151, 1) 100%); 
+  color: white;
+  font-size: 1.5rem;
+  background-size: 100% 180%;
+  padding-bottom: 4rem;
+
+  * {
+    position: relative;
+    z-index: 1;
+  }
+  h1,
+  p {
+    text-align: center;
+  }
+}
+@media (min-width: 1024px) {
   main {
-    min-height: 100vh; // help is there a better way than vh cause is base on how many works i have
-    // background-color: rgb(32,38,50);
-    background: linear-gradient(180deg,rgb(32,38,50) 25%, rgba(102,117,151,1) 60%);
-    transition: all 1s ease;
-    // rgb(32,38,50)
-    color: white;
-    font-size: 1.5rem;
-    background-size: 100% 180%;
-    padding-bottom: 4rem;
-  
-    h1, p {
-      text-align: center;
-    }
+    // height: 250vh;
   }
-  @media (min-width: 1024px) {
-    main{
-      // height: 250vh;
-    }
-  }
-
-  
-
-  
+}

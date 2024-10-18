@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 $white-color: #ffffff;
 $black-color: #323232;
-$light-blue-background-color: rgb(33, 38, 49, 0.3);
+$light-blue-background-color: rgb(33, 38, 49, 0.8);
 $dark-blue-background-color: rgb(33, 38, 49, 1);
 // #212631
 
@@ -10,12 +11,10 @@ $dark-blue-background-color: rgb(33, 38, 49, 1);
 $secondary-color: #c7deff;
 
 
-
-
 //font size
 $moblie-h1-font:3rem;
-$moblie-h2-font:2.5rem;
-$moblie-p-font:1.2rem;
+$moblie-h2-font:1.8rem;
+$moblie-p-font:1rem;
 $moblie-span-font:1.3rem;
 // @mixin grid($c: 1fr 1fr, $r) {
 //   display: grid;

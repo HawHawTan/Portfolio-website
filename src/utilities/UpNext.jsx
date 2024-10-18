@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 import { Link } from 'react-router-dom'
+import FeaturedImage from './FeaturedImage'
+
 function UpNext({slug}) {
  const [nextProject, setNextProject] = useState(null);
  useEffect(() => {
@@ -28,8 +30,9 @@ function UpNext({slug}) {
             <section className="up-next">
                 <Link to={`/works/${nextProject.slug}`}>
                     <div className="up-next-card">
-                    <h3>{nextProject.title.rendered}</h3>
-                    <p>More Details ➔</p>
+                      <FeaturedImage featuredImageObject={nextProject._embedded['wp:featuredmedia'][0]} size="large" />
+                      <h3>{nextProject.title.rendered}</h3>
+                      <p>More Details ➔</p>
                     </div>
                 </Link>
             </section>

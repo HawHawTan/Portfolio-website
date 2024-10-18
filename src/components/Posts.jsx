@@ -16,13 +16,13 @@ const Posts = ({whichPage = "work-page", numberOfProject = "5"}) => {
                 const data = await response.json()
                 setData(data)
                 setLoadStatus(true)
+                
             } else {
                 setLoadStatus(false)
             }
         }
         fetchData()
     }, [restPath])
-    console.log(restData[0]);
     
     return (
         <>
@@ -33,10 +33,7 @@ const Posts = ({whichPage = "work-page", numberOfProject = "5"}) => {
                             {/* <img src={} alt="" /> */}
                             {post.featured_media !== 0 && post._embedded &&
                                 <Link to={`/works/${post.slug}`}>
-                                    <FeaturedImage 
-                                    featuredImageObject={post._embedded['wp:featuredmedia'][0]} 
-                                    size="medium" 
-                                    />
+                                    <FeaturedImage featuredImageObject={post._embedded['wp:featuredmedia'][0]} size="large" />
                                 </Link>
                             }
                             <div className={`${whichPage}-content`}> 
