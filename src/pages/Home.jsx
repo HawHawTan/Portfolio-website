@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 import Posts from '../components/Posts'
 
+import { gsap } from "gsap/dist/gsap";
+
 const Home = () => {
     const restPath = restBase + 'pages/9'
     const [restData, setData] = useState(null)  // Use null initially

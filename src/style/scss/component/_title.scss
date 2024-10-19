@@ -10,3 +10,11 @@
         z-index: 3;
     }   
 }
+
+@media(min-width: 48rem){
+    #title{
+        h1{
+            font-size: $tablet-h1-font;
+          }
+    }
+}

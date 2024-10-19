@@ -1,3 +1,16 @@
+dl{
+    div{
+    position: relative;
+    padding-left: 20px; /* Add space for the line */
+    list-style: none;
+    margin-bottom: 1.3rem;
+
+        dt,dd{
+            margin: 0;
+        }
+    }
+ 
+}
 li{
     position: relative;
     padding-left: 20px; /* Add space for the line */
@@ -5,6 +18,7 @@ li{
     margin-bottom: 1.3rem;
  
 }
+
 .blue-border::before {
     content: '';
     position: absolute;
@@ -15,3 +29,5 @@ li{
     border-radius: 2rem;
     background-color: $secondary-color;
 }
+
+

@@ -4,8 +4,8 @@ import { useParams, Link } from 'react-router-dom'
 import { restBase } from '../utilities/Utilities'
 
 // loading components
-import ProjectSummary from "../utilities/ProjectSummary"
-import UpNext from "../utilities/UpNext"
+import ProjectSummary from "./ProjectSummary"
+import UpNext from "./UpNext"
 
 const SinglePage = () => {
     const { slug } = useParams();

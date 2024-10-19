@@ -10,7 +10,7 @@ h2 {
 p {
   font-size: $moblie-p-font;
 }
-span{
+dd{
   font-size:$moblie-span-font;
 }
 .single-page {
@@ -132,12 +132,18 @@ span{
         text-align: left;
         font-size: 2.5rem;
       }
-      span {
+      dd {
         font-size: 1rem;
       }
     }
   }
 }
 
-@media (min-width: 1024px) {
+@media(min-width: 48rem){
+
+  h2 {
+    font-size: $tablet-h2-font;
+  }
+
 }
+

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 import { Link } from 'react-router-dom'
-import FeaturedImage from './FeaturedImage'
+import FeaturedImage from '../utilities/FeaturedImage'
 
 function UpNext({slug}) {
  const [nextProject, setNextProject] = useState(null);

@@ -7,7 +7,7 @@ import AboutMe from "./pages/About-Me";
 
 import SinglePage from "./components/Single-page";
 
-import Background from "./utilities/VantaDots";
+import Background from "./utilities/3DBackground";
 import ScrollToTop from "./utilities/ScrollToTop";
 import SiteIcon from "./utilities/SiteIcon";
 function App() {
