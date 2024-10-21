@@ -1,7 +1,9 @@
-import LeftToRight from "./animation/LeftToRight";
+// import LeftToRight from "./animation/LeftToRight";
+import ClickThenMoveRight from "./animation/ClickThenMoveRight";
 
 const ProjectSummary = ({acfData,fieldKey,title}) => {
-  const {sectionRefs} = LeftToRight(acfData[fieldKey])
+  // const {sectionRefs} = LeftToRight(acfData[fieldKey])
+  const { refs } = ClickThenMoveRight(acfData[fieldKey]);
   if (!acfData[fieldKey] ) {
     return null; 
   }
@@ -12,7 +14,7 @@ const ProjectSummary = ({acfData,fieldKey,title}) => {
       <dl> 
         {acfData[fieldKey].map((feature, index) => (
           <div key={index} className='blue-border'
-            ref={el => sectionRefs.current[index] = el}
+            ref={el => refs.current[index] = el}
           >
             <dt>{feature.title}: </dt>
             <dd className="description-text">{feature.description}</dd>
