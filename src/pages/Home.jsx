@@ -22,13 +22,63 @@ const Home = () => {
         }
         fetchData()
     }, [restPath])
-    
+
+    useEffect(() => {
+        if (restData) {
+            const tl = gsap.timeline({ repeat: -1, yoyo: true }); // Repeat infinitely, reverse on each loop
+
+            tl.fromTo(
+                "#wave-text span",
+                { y: 50, opacity: 0 },  // Initial animation starting point
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    stagger: 0.1,  // Letters appear one by one
+                    ease: "power3.out", // Smooth appearance
+                }
+            ).to(
+                "#wave-text span",
+                {
+                    y: 15,  // Subtle up and down movement for the wave
+                    duration: 0.7,
+                    stagger: 0.1,
+                    ease: "power3.inOut", // Smooth easing
+                    repeat: -1,  // Loop infinitely
+                    yoyo: true,  // Reverse back to original position
+                }
+            );
+            gsap.fromTo(
+                "#wave-text span",
+                { textShadow: "0px 0px 0px rgba(0, 0, 0, 0)" },  // Start with no shadow
+                {
+                    textShadow: " 3px 0px 2px #c7deff",  // Add blue shadow
+                    duration: 0.9,  // Slightly slower than the text animation
+                    stagger: 0.1,  // Add a bit more delay to the shadow
+                    ease: "power3.out",
+                    repeat: -1,
+                    yoyo: true,
+                }
+            );
+        }
+    }, [restData]);
+
+    const createWaveText = (text) =>
+        text.split("").map((char, index) => (
+          <span key={index} style={{ display: "inline-block", margin: "0 0.2rem" }}>
+            {char}
+          </span>
+        ));
     return (
         <>
             { restData ? (  
             <>
                 <section id='title'>
-                    <h1 id={`post-${restData.id}`}>{restData.title.rendered}</h1>
+                    <h1 id={`post-${restData.id}`}>
+                        <div id='wave-text'>
+                            {createWaveText(restData.title.rendered)}
+                        </div>
+                    </h1>
                 </section>
                 <section id='home-page-work'>
                     <h2>Work</h2>

@@ -5,6 +5,7 @@ import { restBase } from '../utilities/Utilities'
 
 // loading components
 import ProjectSummary from "./ProjectSummary"
+import ProjectOverview from "./ProjectOverview"
 import UpNext from "./UpNext"
 
 const SinglePage = () => {
@@ -23,6 +24,10 @@ const SinglePage = () => {
                 setData(data[0])
                 setLoadStatus(true)
                 setAcfData(data[0].acf);
+                console.log('====================================');
+                console.log(data[0].acf);
+                console.log(data[0].acf);
+                console.log('====================================');
             } else {
                 setLoadStatus(false)
             }
@@ -40,6 +45,7 @@ const SinglePage = () => {
                     } */}
                     {/* <ScrollReverseVide/>   */}{/* if i want reload the video when i am back to the top*/}
                     <div className="entry-content" dangerouslySetInnerHTML={{__html:restData.content.rendered}}></div>
+                    <ProjectOverview acfData={acfData}/>
                 </section>
                 <div id='projectSummary-div'>
                     {acfData && (

@@ -9,7 +9,7 @@ const ProjectSummary = ({acfData,fieldKey,title}) => {
   }
   // need to change it to dl
   return (
-    <section className="projectSummary">
+    <div className="projectSummary">
       <h2>{title}</h2>
       <dl> 
         {acfData[fieldKey].map((feature, index) => (
@@ -21,7 +21,7 @@ const ProjectSummary = ({acfData,fieldKey,title}) => {
           </div>
         ))}
       </dl>
-    </section>
+    </div>
   );
 };
 
