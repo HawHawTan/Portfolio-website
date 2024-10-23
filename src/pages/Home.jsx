@@ -3,6 +3,7 @@ import { restBase } from '../utilities/Utilities'
 import Posts from '../components/Posts'
 
 import { gsap } from "gsap/dist/gsap";
+import { useGSAP } from '@gsap/react';
 
 const Home = () => {
     const restPath = restBase + 'pages/9'
@@ -23,7 +24,7 @@ const Home = () => {
         fetchData()
     }, [restPath])
 
-    useEffect(() => {
+    useGSAP(() => {
         if (restData) {
             const tl = gsap.timeline({ repeat: -1, yoyo: true }); // Repeat infinitely, reverse on each loop
 
@@ -35,7 +36,7 @@ const Home = () => {
                     opacity: 1,
                     duration: 1,
                     stagger: 0.1,  // Letters appear one by one
-                    ease: "power3.out", // Smooth appearance
+                    ease: "power3.inOut", // Smooth appearance
                 }
             ).to(
                 "#wave-text span",
@@ -43,23 +44,24 @@ const Home = () => {
                     y: 15,  // Subtle up and down movement for the wave
                     duration: 0.7,
                     stagger: 0.1,
+                    textShadow: " -3px 0px 2px #c7deff",
                     ease: "power3.inOut", // Smooth easing
                     repeat: -1,  // Loop infinitely
                     yoyo: true,  // Reverse back to original position
                 }
             );
-            gsap.fromTo(
-                "#wave-text span",
-                { textShadow: "0px 0px 0px rgba(0, 0, 0, 0)" },  // Start with no shadow
-                {
-                    textShadow: " 3px 0px 2px #c7deff",  // Add blue shadow
-                    duration: 0.9,  // Slightly slower than the text animation
-                    stagger: 0.1,  // Add a bit more delay to the shadow
-                    ease: "power3.out",
-                    repeat: -1,
-                    yoyo: true,
-                }
-            );
+            // gsap.fromTo(
+            //     "#wave-text span",
+            //     { textShadow: "0px 0px 0px rgba(0, 0, 0, 0)" },  // Start with no shadow
+            //     {
+            //         textShadow: " 3px 0px 2px #c7deff",  // Add blue shadow
+            //         duration: 0.9,  // Slightly slower than the text animation
+            //         stagger: 0.1,  // Add a bit more delay to the shadow
+            //         ease: "power3.inOut",
+            //         repeat: -1,
+            //         yoyo: true,
+            //     }
+            // );
         }
     }, [restData]);
 

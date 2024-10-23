@@ -12,6 +12,10 @@ body {
   h1 {
     font-size: $moblie-h1-font;
   }
+  h1,
+  h2{
+    color: $secondary-color;
+  }
 
   #vantaBG {
     // position: absolute;

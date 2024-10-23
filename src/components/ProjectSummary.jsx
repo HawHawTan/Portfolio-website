@@ -1,9 +1,9 @@
 // import LeftToRight from "./animation/LeftToRight";
-import ClickThenMoveRight from "./animation/ClickThenMoveRight";
+import GsapAnimation from "./animation/GsapAnimation";
 
 const ProjectSummary = ({acfData,fieldKey,title}) => {
   // const {sectionRefs} = LeftToRight(acfData[fieldKey])
-  const { refs } = ClickThenMoveRight(acfData[fieldKey]);
+  const { refs } = GsapAnimation(acfData[fieldKey]);
   if (!acfData[fieldKey] ) {
     return null; 
   }

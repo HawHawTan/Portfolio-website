@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { restBase } from '../utilities/Utilities'
 import Posts from '../components/Posts'
 
-const Works = ({whichPage = "work-page", numberOfProject = "5"}) => {
+const Works = () => {
     const restPath = restBase + 'pages/11'
     const [restData, setData] = useState([])
     const [isLoaded, setLoadStatus] = useState(false) // if i want to add the load 
