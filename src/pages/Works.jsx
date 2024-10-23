@@ -22,7 +22,6 @@ const Works = ({whichPage = "work-page", numberOfProject = "5"}) => {
         }
         fetchData()
     }, [restPath])
-    console.log(restData[0]);
     
     return (
         <>

@@ -14,6 +14,7 @@ const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
     const restPath = `${restBase}posts?_embed`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
+    const [acfData, setAcfData] = useState(null);
 
     const { refs, animateAndNavigate } = ClickThenMoveRight(restData);
     const navigate = useNavigate();

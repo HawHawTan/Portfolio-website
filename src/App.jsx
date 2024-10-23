@@ -9,7 +9,7 @@ import SinglePage from "./components/Single-page";
 
 import Background from "./utilities/3DBackground";
 import ScrollToTop from "./utilities/ScrollToTop";
-import SiteIcon from "./utilities/SiteIcon";
+// import SiteIcon from "./utilities/SiteIcon";
 function App() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -30,7 +30,7 @@ function App() {
     <>
       <Background />
       <ScrollToTop />
-      <SiteIcon/>
+      {/* <SiteIcon/> */}
       <header id="masthead" className="site-header">
         <div className="site-branding"></div>
         <nav className="site-navigation">
