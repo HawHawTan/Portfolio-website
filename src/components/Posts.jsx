@@ -3,12 +3,8 @@ import { Link,useNavigate } from 'react-router-dom';
 import { restBase } from '../utilities/Utilities';
 import FeaturedImage from '../utilities/FeaturedImage';
 
-import ClickThenMoveRight from './animation/ClickThenMoveRight'; //made a hook for this
+import GsapAnimation from './animation/GsapAnimation'; //made a hook for this
 
-import { gsap } from "gsap/dist/gsap";  
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
     const restPath = `${restBase}posts?_embed`;
@@ -16,7 +12,7 @@ const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
     const [isLoaded, setLoadStatus] = useState(false);
     const [acfData, setAcfData] = useState(null);
 
-    const { refs, animateAndNavigate } = ClickThenMoveRight(restData);
+    const { refs, clickThenMoveRight } = GsapAnimation(restData);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -39,7 +35,7 @@ const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
     }, [restPath]);
 
     const handleClick = (index, slug) => {
-        animateAndNavigate(index, () => navigate(`/works/${slug}`)); // Animate and then navigate
+        clickThenMoveRight(index, () => navigate(`/works/${slug}`)); // Animate and it move right to the single page
     };
 
     return (
@@ -49,7 +45,7 @@ const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
                     restData.slice(0, numberOfProject).map((post, index) => (
                         <article 
                             key={post.id} 
-                            className={`${whichPage}`}  // Add a class if clicked
+                            className={`${whichPage}`} 
                             ref={el => refs.current[index] = el} // Store refs for each article
                             onClick={() => handleClick(index, post.slug)} 
                         >

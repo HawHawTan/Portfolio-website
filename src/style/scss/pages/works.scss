@@ -27,7 +27,7 @@
       }
     }
   }
-  .work-page:nth-child(even) {
+  .work-page:nth-child(odd) {
     flex-direction: row-reverse;
 
     img {
