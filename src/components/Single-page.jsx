@@ -10,7 +10,7 @@ import UpNext from "./UpNext";
 
 const SinglePage = () => {
   const { slug } = useParams();
-  const restPath = restBase + `posts?slug=${slug}&_embed`;
+  const restPath = restBase + `posts?slug=${slug}&_embed&acf_format=standard`;
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
   const [acfData, setAcfData] = useState(null);
@@ -34,7 +34,7 @@ const SinglePage = () => {
 
   return (
     <>
-      {isLoaded ? (
+  
         <>
           <section id={`post-${restData.id}`} className="single-page">
             {/* {restData.featured_media !== 0 && restData._embedded &&
@@ -42,10 +42,10 @@ const SinglePage = () => {
                     } */}
             {/* <ScrollReverseVide/>   */}
             {/* if i want reload the video when i am back to the top*/}
-            <div
+            {/* <div
               className="entry-content"
               dangerouslySetInnerHTML={{ __html: restData.content.rendered }}
-            ></div>
+            ></div> */}
             <ProjectOverview acfData={acfData} />
           </section>
           <div id="projectSummary-div">
@@ -72,7 +72,7 @@ const SinglePage = () => {
           <h2 id="up-next-title">Up Next</h2>
           <UpNext slug={slug} />
         </>
-      ) : null}
+      
     </>
   );
 };

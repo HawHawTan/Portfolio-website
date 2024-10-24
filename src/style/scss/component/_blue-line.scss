@@ -8,14 +8,19 @@ dl{
         dt,dd{
             margin: 0;
         }
+        dt{
+            font-size: $moblie-span-font;
+        }
+        dd{
+            font-size: $moblie-p-font;
+            position: relative;
+            padding-left: .625rem; 
+            list-style: none;
+            margin-bottom: 1.3rem;
+         
+        }
     }
-    dd{
-        position: relative;
-        padding-left: .625rem; 
-        list-style: none;
-        margin-bottom: 1.3rem;
-     
-    }
+    
     .blue-border{
         background-color: $light-blue-background-color;
     }

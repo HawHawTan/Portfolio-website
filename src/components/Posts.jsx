@@ -41,7 +41,7 @@ const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
     return (
         <div id="work">
             <div className={`${whichPage}-section`}>
-                {isLoaded ? (
+                {isLoaded && (
                     restData.slice(0, numberOfProject).map((post, index) => (
                         <article 
                             key={post.id} 
@@ -64,8 +64,6 @@ const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
                             </div>
                         </article>
                     ))
-                ) : (
-                    <p>Loading...</p>
                 )}
             </div>
         </div>
