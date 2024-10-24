@@ -24,7 +24,6 @@ const SinglePage = () => {
         setData(data[0]);
         setLoadStatus(true);
         setAcfData(data[0].acf);
-        console.log(data[0].acf);
       } else {
         setLoadStatus(false);
       }

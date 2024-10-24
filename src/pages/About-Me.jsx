@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 // import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
 
@@ -15,7 +14,6 @@ const AboutMe = () => {
             const response = await fetch(restPath)
             if ( response.ok ) {
                 const data = await response.json()
-                setData(data[0])
                 setLoadStatus(true)
                 setAcfData(data.acf);
                 // console.log(data.acf);

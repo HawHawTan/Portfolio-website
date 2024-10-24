@@ -26,6 +26,9 @@
     }
   
     .projectOverview{
+      .group-inner-content{
+        background-color: $light-blue-background-color;
+      }
       .buttons{
         display: flex;
         justify-content: space-evenly;
@@ -38,6 +41,7 @@
           color: $black-color;
         }
       }
+
     }
 }
 .projectSummary {
@@ -68,7 +72,7 @@
 
 @media (min-width: 1024px) {
   .single-page {
-    padding: 2rem 4rem;
+    // padding: 2rem 4rem;
 
     #mobile-h1 {
       display: none;
@@ -80,12 +84,12 @@
       padding-top: 7rem; 
       justify-content: space-around;
       align-items: center;
-      .video-div { //help
+      .video-div { 
         width: 50%;
         display: flex;
         justify-content: center;
         video {
-          max-width: 54.6875rem; //help (haw fix the px to rem? right?)
+          max-width: 54.6875rem; 
         }
       }
       .group-content {
@@ -130,7 +134,6 @@
 }
 
 @media(min-width: 48rem){
-
   h2 {
     font-size: $tablet-h2-font;
   }

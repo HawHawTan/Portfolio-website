@@ -15,8 +15,12 @@ if (!acfData ) {
         )}
         <div className='group-content'>
           <h1>{acfData.title}</h1>
-          <h2>Project Overview</h2>
-          <p>{acfData.project_overview}</p>
+          <div className='group-inner-content'>
+            <h2>Project Overview</h2>
+            {/* help */}
+            <div dangerouslySetInnerHTML={{ __html: acfData.project_overview }}></div> 
+          </div>
+          {/* <p>{acfData.project_overview}</p> */}
           <div className='buttons'>
               {/* help, do i use A tag */}
               <a href={`${acfData.github}`}>GitHub</a> 

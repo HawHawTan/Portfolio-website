@@ -8,6 +8,8 @@ nav{
     width: 85%;
     @include border-radius(2px,$white-color,3.125rem);
     margin-bottom: 1.5rem;
+    // margin-bottom: 4rem; help
+
     z-index: 22;
     ul{
         display: flex;

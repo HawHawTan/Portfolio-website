@@ -54,8 +54,11 @@ main {
     text-align: center;
   }
 }
+// fix
 @media (min-width: 1024px) {
   main {
-    // height: 250vh;
+    max-width: 90%;
+    // max-width: 2000px; //help ik ik i shouldnt use px 
+    margin: 0 auto;
   }
 }

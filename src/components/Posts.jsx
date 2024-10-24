@@ -10,7 +10,6 @@ const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
     const restPath = `${restBase}posts?_embed`;
     const [restData, setData] = useState([]);
     const [isLoaded, setLoadStatus] = useState(false);
-    const [acfData, setAcfData] = useState(null);
 
     const { refs, clickThenMoveRight } = GsapAnimation(restData);
     const navigate = useNavigate();
@@ -46,9 +45,11 @@ const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
                         <article 
                             key={post.id} 
                             className={`${whichPage}`} 
-                            ref={el => refs.current[index] = el} // Store refs for each article
+                            ref={el => refs.current[index] = el}
                             onClick={() => handleClick(index, post.slug)} 
                         >
+                        {
+                       }
                             {post.featured_media !== 0 && post._embedded && (
                                 <FeaturedImage 
                                     featuredImageObject={post._embedded['wp:featuredmedia'][0]} 

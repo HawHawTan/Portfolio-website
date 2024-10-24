@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 import { restBase } from "../utilities/Utilities";
-import Posts from "../components/Posts";
-import Loading from "../utilities/Loading";
-
 import { gsap } from "gsap/dist/gsap";
 import { useGSAP } from '@gsap/react';
+
+import Posts from "../components/Posts";
+import Contact from "./Contact";
+import Loading from "../utilities/Loading";
+
 
 const Home = () => {
   const restPath = restBase + "pages/9";
   const [restData, setData] = useState(null); // Use null initially
-  const [isLoading, setIsLoading] = useState(true); 
+  // const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,9 +20,9 @@ const Home = () => {
         if (response.ok) {
           const data = await response.json();
           setData(data); // Set the data once fetched
-          setTimeout(() => {
-            setIsLoading(false); // Disable loading after delay
-          }, 20000); 
+          // setTimeout(() => {
+          //   setIsLoading(false); // Disable loading after delay
+          // }, 800); 
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -63,10 +65,11 @@ const Home = () => {
     ));
   return (
     <>
-      {isLoading ?(
+      {/* {isLoading ?(
         <Loading/>
       )
-      : (
+      : ( */}
+      {restData &&(
         <>
           <section id="title">
             <h1 id={`post-${restData.id}`}>
@@ -78,9 +81,10 @@ const Home = () => {
           <section id="home-page-work">
             <h2>Work</h2>
             <Posts whichPage="home-posts" numberOfProject="2" />
+            <Contact/>
           </section>
         </>
-      ) }
+      )}
     </>
   );
 };
