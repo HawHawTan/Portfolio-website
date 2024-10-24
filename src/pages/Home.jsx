@@ -4,7 +4,7 @@ import { gsap } from "gsap/dist/gsap";
 import { useGSAP } from '@gsap/react';
 
 import Posts from "../components/Posts";
-import Contact from "./Contact";
+import Contact from "./Footer";
 import Loading from "../utilities/Loading";
 
 
@@ -59,16 +59,12 @@ const Home = () => {
 
   const createWaveText = (text) =>
     text.split("").map((char, index) => (
-      <span key={index} style={{ display: "inline-block", margin: "0 0.2rem" }}>
+      <span key={index}>
         {char}
       </span>
     ));
   return (
     <>
-      {/* {isLoading ?(
-        <Loading/>
-      )
-      : ( */}
       {restData &&(
         <>
           <section id="title">
@@ -81,7 +77,6 @@ const Home = () => {
           <section id="home-page-work">
             <h2>Work</h2>
             <Posts whichPage="home-posts" numberOfProject="2" />
-            <Contact/>
           </section>
         </>
       )}

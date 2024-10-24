@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Home from "./pages/Home";
 import Works from "./pages/Works";
 import AboutMe from "./pages/About-Me";
+import Footer from "./pages/Footer";
 
 import SinglePage from "./components/Single-page";
 
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <>
+      {/* add a screen reader fix */}
       <Background />
       <ScrollToTop />
       {/* <SiteIcon/> */}
@@ -36,15 +38,13 @@ function App() {
         <nav className="site-navigation">
           <ul>
             <li>
-              <NavLink to="/" end>
-                Home
-              </NavLink>
+              <NavLink to="/" aria-label="Home" end> Home </NavLink>
             </li>
             <li>
-              <NavLink to="/Works">Works</NavLink>
+              <NavLink to="/Works" aria-label="Works">Works </NavLink>
             </li>
             <li>
-              <NavLink to="/AboutMe">About</NavLink>
+              <NavLink to="/AboutMe" aria-label="About Me">About</NavLink>
             </li>
             {/* <li><NavLink to='/contact'>Contact</NavLink></li> */}
           </ul>
@@ -62,6 +62,7 @@ function App() {
           {/*<Route path='/contact' element={<Contact />} /> */}
         </Routes>
       </main>
+      <Footer/>
     </>
   );
 }

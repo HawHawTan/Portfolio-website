@@ -43,8 +43,9 @@ const VantaDotsBackground = () => {
             scaleMobile: 1.0,
             color: 0xc7deff,
             color2: 0xc7deff,
+            // 0x6c727f
             backgroundColor: 0x212631,
-            size:3,
+            size: 3,
             spacing: 50.0,
             showLines: false,
           });
@@ -61,9 +62,13 @@ const VantaDotsBackground = () => {
       if (vantaEffect) vantaEffect.destroy();
     };
   }, []);
-  return <div id="vantaBG" ref={vantaRef} style={{ width: "100%", height: "100vh" }} />
-}
+  return (
+    <div
+      id="vantaBG"
+      ref={vantaRef}
+      style={{ width: "100%", height: "100vh" }}
+    />
+  );
+};
 
 export default VantaDotsBackground;
-
-

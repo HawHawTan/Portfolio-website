@@ -9,6 +9,9 @@
         text-align: center;
         z-index: 3;
     }   
+    span{
+        display: inline-block;
+    }
 }
 
 @media(min-width: 48rem){

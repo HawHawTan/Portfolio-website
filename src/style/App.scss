@@ -1,9 +1,8 @@
 //components
-@import "./scss/_variables.scss";
-@import "./scss/_mixin.scss";
+@import "./scss/variables.scss";
+@import "./scss/mixin.scss";
+@import "./scss/normalize.scss";
 
-
-@import "normalize.css";
 @import "./scss/component/header";
 @import "./scss/component/title.scss";
 @import "./scss/component/main.scss";
@@ -11,12 +10,9 @@
 @import "./scss/component/blue-line.scss";
 @import "./scss/component/loading.scss";
 
-
 // pages
 @import "./scss/pages/home.scss";
 @import "./scss/pages/works.scss";
 @import "./scss/pages/single-page.scss";
 @import "./scss/pages/about-page.scss";
-@import "./scss/pages/contact.scss";
-
-
+@import "./scss/pages/footer.scss";

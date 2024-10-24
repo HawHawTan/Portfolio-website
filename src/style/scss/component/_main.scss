@@ -43,7 +43,7 @@ main {
   // background: linear-gradient(180deg,rgba(32, 38, 50, 1) 0%, rgba(32, 38, 50, 1) 33%, rgba(102, 117, 151, 1) 100%); 
   color: white;
   // font-size: 1.5rem;
-  padding-bottom: 4rem;
+  // padding-bottom: 4rem;
 
   * {
     position: relative;
@@ -55,10 +55,10 @@ main {
   }
 }
 // fix
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
   main {
-    max-width: 90%;
-    // max-width: 2000px; //help ik ik i shouldnt use px 
+    // max-width: 90%;
+    max-width: 90rem; 
     margin: 0 auto;
   }
 }
