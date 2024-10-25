@@ -1,12 +1,10 @@
-import loading from '../assets/loading.gif';
-// import loading from '../assets/bouncing-circles.svg';
+import Loader from '../assets/bouncing-circles.svg?react';
 
 const Loading = () => {
     
     return (
         <div className="loading-container">
-            <img src={loading} alt="Loading" className="loading" id="loading" />
-            <img src={loading} alt="Loading" className="loading" id="loading" />
+            <Loader/>            
         </div>
     )
 

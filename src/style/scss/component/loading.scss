@@ -2,5 +2,9 @@
     display: flex;
     justify-content: center; /* Horizontally center */
     align-items: center;     /* Vertically center */
-    height: 100vh;           /* Full viewport height to center vertically */
+    height: 100vh;    
+    svg{
+        height: 6.25rem;
+        width: 6.25rem;
+    }       /* Full viewport height to center vertically */
 }

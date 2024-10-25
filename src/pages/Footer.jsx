@@ -20,7 +20,6 @@ function Contact() {
         const data = await response.json();
         setLoadStatus(true);
         setAcfData(data.acf);
-        console.log(data.acf);
       } else {
         setLoadStatus(false);
       }
@@ -31,9 +30,9 @@ function Contact() {
     <footer>
       <p id="copyright">{acfData.copyright}</p>
       <div className="social-media">
-        <a href={acfData.linkedin}><Linkedin /></a>
-        <a href={acfData.github}><Github/></a>
-        <a href={`mailto:${acfData.email}`}><Email/></a> 
+        <a href={acfData.linkedin} aria-label="LinkedIn Profile"><Linkedin /></a>
+        <a href={acfData.github} aria-label="Github Profile"><Github/></a>
+        <a href={`mailto:${acfData.email}`}aria-label="Email Profile" ><Email/></a> 
       </div>
     </footer>
   );

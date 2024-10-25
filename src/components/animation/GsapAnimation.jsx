@@ -9,7 +9,7 @@ function ClickThenMoveRight(restData) {
 
     // Animate LeftToRight animation
     useGSAP(() => {
-        if (restData.length > 0) {
+        if (restData.length > 0 && refs.current.every(ref => ref !== null)) {
             gsap.fromTo(
                 refs.current,
                 { x: '-100%', opacity: 0 }, // Start position
@@ -22,7 +22,7 @@ function ClickThenMoveRight(restData) {
                 } // Animation properties
             );
         }
-    }, [restData]);
+    }, [restData,refs.current]);
 
     // Animation on click and then navigate
     const clickThenMoveRight = (index, navigate) => {
