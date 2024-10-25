@@ -1,4 +1,7 @@
 #about-me{
+    width: 80%;
+    max-width: 40rem;
+    margin: 0 auto;
     padding: 1rem;
     p{
         text-align: left;
@@ -6,7 +9,36 @@
         margin-bottom: 1rem;
     }
 }
+#interesting-content{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: column;
+    #currently-working-on,#hobbies{
+        padding: 1rem;
+    }
+}
 
-#currently-working-on,#hobbies{
-    padding: 1rem;
+@media(min-width: 43.75rem){
+    #about-me,#interesting-content{
+        p,li{
+            font-size: $tablet-p-font;
+        }
+    }
+    #interesting-content{
+        width: 100%;
+        max-width: 50rem;
+        flex-direction: row;
+        // align-items: center;
+        justify-content: space-evenly;
+        
+        h2{
+            font-size: 2rem;
+        }
+
+        #currently-working-on{
+            position: relative;
+            
+        }
+    }
 }

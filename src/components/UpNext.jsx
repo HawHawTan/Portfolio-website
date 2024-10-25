@@ -22,14 +22,17 @@ function UpNext({ slug }) {
         const currentIndex = data.findIndex((post) => post.slug === slug);
         setIndex(currentIndex);
         setData(data);
-
+        console.log('====================================');
+        console.log(data);
+        console.log('====================================');
         // Set the next project based on the current index
-        if (currentIndex !== -1 && currentIndex < data.length - 1) {
-          setNextProject(data[currentIndex + 1]);
-        } else {
-          setNextProject(data[0]); // Loop back to the first project
-        }
+        if ((currentIndex !== -1 && currentIndex !== 0) && currentIndex <= data.length - 1 ) {
+          setNextProject(data[currentIndex - 1]);
       }
+      else{
+          setNextProject(data[data.length -1]);
+      } 
+    }
     };
 
     fetchNextProject();
@@ -43,7 +46,7 @@ function UpNext({ slug }) {
 
   return (
     <div className='home-posts-section'>
-      {nextProject ? (
+      {nextProject &&(
         <article
           className={'home-posts'}
           ref={(el) => (refs.current[index] = el)}
@@ -60,9 +63,10 @@ function UpNext({ slug }) {
             <p id="more-details-button">More Details</p>
           </div>
         </article>
-      ) : (
+      ) }
+      {/* : (
         <p>Loading...</p>
-      )}
+      )} */}
     </div>
   );
 }

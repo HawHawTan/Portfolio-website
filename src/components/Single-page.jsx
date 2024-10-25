@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { restBase } from "../utilities/Utilities";
+
 import Loading from '../utilities/Loading';
 import ProjectSummary from "./ProjectSummary";
 import ProjectOverview from "./ProjectOverview";
@@ -16,7 +17,6 @@ const SinglePage = () => {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    setLoadStatus(false); // Reset loading status on slug change
     setShowContent(false); // Reset the content display
 
     const fetchData = async () => {
@@ -28,22 +28,21 @@ const SinglePage = () => {
         setLoadStatus(true);
 
         setTimeout(() => {
-          setShowContent(true); // Show content after 2-second delay
-        }, 2000);
+          setShowContent(true);
+        }, 1500);
       } else {
         setLoadStatus(false);
       }
     };
 
     fetchData();
-  }, [restPath, slug]); // Re-run the effect whenever `slug` changes
+  }, [restPath, slug]);
 
-  if (!isLoaded || !showContent) {
-    return <Loading />;
-  }
 
   return (
-    <>
+   <>
+    {showContent ? (
+      <>
       <section id={`post-${restData.id}`} className="single-page">
         <ProjectOverview acfData={acfData} />
       </section>
@@ -69,9 +68,12 @@ const SinglePage = () => {
         )}
       </div>
       <h2 id="up-next-title">Up Next</h2>
-      <UpNext slug={slug} /> {/* Pass the current slug to UpNext */}
+      <UpNext slug={slug} /> 
     </>
-  );
-};
+     ):(
+      <Loading/>
+    )}
+    </> 
+  )};
 
 export default SinglePage;

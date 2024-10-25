@@ -37,26 +37,29 @@ const AboutMe = () => {
                     </>
                 )}
             </section>
-            <section id="currently-working-on">
-                <h2>Currently Working On</h2>
-                {acfData.currently_working_on && (
-                    <ul>
-                        {acfData.currently_working_on.map((content, index) => (
-                            <li key={index}>{content.working_on}</li>
-                        ))}
-                    </ul>
-                )}
-            </section>
-            <section id="hobbies">
-                <h2>Hobbies</h2>
-                {acfData.hobbies && (
-                    <ul>
-                        {acfData.hobbies.map((content, index) => (
-                            <li key={index}>{content.what_i_enjoy}</li>
-                        ))}
-                    </ul>
-                )}
-            </section>
+            <div id='interesting-content'>
+                <section id="currently-working-on">
+                    <h2>Currently Working On</h2>
+                    {acfData.currently_working_on && (
+                        <ul>
+                            {acfData.currently_working_on.map((content, index) => (
+                                <li key={index}>{content.working_on}</li>
+                            ))}
+                        </ul>
+                    )}
+                </section>
+                <section id="hobbies">
+                    <h2>Hobbies</h2>
+                    {acfData.hobbies && (
+                        <ul>
+                            {acfData.hobbies.map((content, index) => (
+                                <li key={index}>{content.what_i_enjoy}</li>
+                            ))}
+                        </ul>
+                    )}
+                </section> 
+            </div>
+         
         </>
     )
 }

@@ -26,9 +26,7 @@ function ClickThenMoveRight(restData) {
 
     // Animation on click and then navigate
     const clickThenMoveRight = (index, navigate) => {
-        const card = refs.current[index];
-        console.log(card);
-        
+        const card = refs.current[index];    
         if (card) {
             if(index%2 == 0){
                 gsap.to(card, {
