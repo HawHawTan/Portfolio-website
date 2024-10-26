@@ -8,7 +8,8 @@ import { APP_FOLDER_NAME } from "./globals";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename={`/${APP_FOLDER_NAME}`}>
+    {/* <BrowserRouter basename={`/${APP_FOLDER_NAME}`}> */}
+    <BrowserRouter basename="/">
       <App />
     </BrowserRouter>
   </React.StrictMode>

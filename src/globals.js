@@ -1,1 +1,1 @@
-export const APP_FOLDER_NAME = "portfolio";
+export const APP_FOLDER_NAME = "";
