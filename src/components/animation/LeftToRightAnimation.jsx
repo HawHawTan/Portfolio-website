@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-function ClickThenMoveRight(restData) {
+function LeftToRightAnimation(restData) {
     const refs = useRef([]);
 
     // Animate LeftToRight animation
@@ -25,7 +25,7 @@ function ClickThenMoveRight(restData) {
     }, [restData,refs.current]);
 
     // Animation on click and then navigate
-    const clickThenMoveRight = (index, navigate) => {
+    const clickThenMoveRightOrLeft = (index, navigate) => {
         const card = refs.current[index];    
         if (card) {
             if(index%2 == 0){
@@ -53,7 +53,7 @@ function ClickThenMoveRight(restData) {
         }
     };
 
-    return { refs, clickThenMoveRight };
+    return { refs, clickThenMoveRightOrLeft };
 }
 
-export default ClickThenMoveRight;
+export default LeftToRightAnimation;

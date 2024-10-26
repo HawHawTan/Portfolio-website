@@ -34,13 +34,15 @@ footer {
   }
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 56.25rem) {
   footer {
     margin-bottom: 5rem;
     #copyright {
       position: fixed;
       left: 0;
       bottom: 0;
+      margin-left: 1rem;
+      // margin: 1rem 1rem 2.5rem;
     }
     .social-media {
       right: 0;

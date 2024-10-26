@@ -44,7 +44,7 @@ function App() {
               <NavLink to="/Works" aria-label="Works">Works </NavLink>
             </li>
             <li>
-              <NavLink to="/AboutMe" aria-label="About Me">About</NavLink>
+              <NavLink to="/AboutMe" aria-label="About Me">About Me</NavLink>
             </li>
             {/* <li><NavLink to='/contact'>Contact</NavLink></li> */}
           </ul>

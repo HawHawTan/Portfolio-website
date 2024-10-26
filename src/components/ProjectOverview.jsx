@@ -8,7 +8,7 @@ if (!acfData ) {
     <section className="projectOverview">
         {acfData.macbook_video && (
           <div className="video-div">
-            <video autoPlay muted>
+            <video autoPlay muted playsInline>
               <source src={acfData.macbook_video} type="video/mp4" />
             </video>
           </div>

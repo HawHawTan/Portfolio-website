@@ -6,7 +6,6 @@ const VantaDotsBackground = () => {
   useEffect(() => {
     let vantaEffect = null;
 
-    // Function to dynamically load a script and return a promise
     const loadScript = (src) => {
       return new Promise((resolve, reject) => {
         const script = document.createElement("script");
@@ -19,7 +18,6 @@ const VantaDotsBackground = () => {
 
     const initializeVanta = async () => {
       try {
-        // Ensure three.js is loaded first
         if (!window.THREE) {
           await loadScript(
             "https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
@@ -64,10 +62,14 @@ const VantaDotsBackground = () => {
   }, []);
   return (
     <div
-      id="vantaBG"
-      ref={vantaRef}
-      style={{ width: "100%", height: "100vh" }}
-    />
+    id="vantaBG"
+    ref={vantaRef}
+    style={{
+      width: "100%",
+      height: "100vh",
+      backgroundColor: "#24303F" // Fallback bg color
+    }}
+  />
   );
 };
 
