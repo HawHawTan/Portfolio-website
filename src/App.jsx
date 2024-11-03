@@ -1,13 +1,15 @@
 import { Route, Routes, Link, NavLink } from "react-router-dom";
 import React, { useEffect, useState, useRef } from "react";
+import {Helmet} from "react-helmet";
+
 // templates
 import Home from "./pages/Home";
 import Works from "./pages/Works";
 import AboutMe from "./pages/About-Me";
 import Footer from "./pages/Footer";
-
+ 
 import SinglePage from "./components/Single-page";
-
+ 
 import Background from "./utilities/3DBackground";
 import ScrollToTop from "./utilities/ScrollToTop";
 // import SiteIcon from "./utilities/SiteIcon";
