@@ -6,7 +6,7 @@ import { useGSAP } from '@gsap/react';
 import Posts from "../components/Posts";
 import Contact from "./Footer";
 import Loading from "../utilities/Loading";
-
+import ScrollDown from "../utilities/ScrollDown";
 
 const Home = () => {
   const restPath = restBase + "pages/9";
@@ -77,6 +77,7 @@ const Home = () => {
               </div>
             </h1>
             <p>{restData.acf.specializes_title}</p>
+            <ScrollDown/>
             </section>
           <section id="home-page-work">
             <h2>Feature Projects</h2>

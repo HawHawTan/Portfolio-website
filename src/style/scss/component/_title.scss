@@ -13,6 +13,13 @@
     span{
         display: inline-block;
     }
+    .scrollDown-container{
+        position: absolute;
+        bottom: 6rem;
+        img{
+            width: 1.875rem;
+        }
+    } 
 }
 
 @media(min-width: 48rem){

@@ -1,5 +1,5 @@
-// import Loader from '../assets/bouncing-circles.svg?react';
-import Loader from '../assets/bouncing-circles.svg';
+import React from 'react'
+import Loader from '../assets/animation/bouncing-circles.svg';
 const Loading = () => {
     
     return (
