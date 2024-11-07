@@ -20,6 +20,9 @@ const Home = () => {
         if (response.ok) {
           const data = await response.json();
           setData(data); // Set the data once fetched
+          console.log(data);
+          console.log(data.acf);
+          
           // setTimeout(() => {
           //   setIsLoading(false); // Disable loading after delay
           // }, 800); 
@@ -73,9 +76,10 @@ const Home = () => {
                 {createWaveText(restData.title.rendered)}
               </div>
             </h1>
-          </section>
+            <p>{restData.acf.specializes_title}</p>
+            </section>
           <section id="home-page-work">
-            <h2>Work</h2>
+            <h2>Feature Projects</h2>
             <Posts whichPage="home-posts" numberOfProject="2" />
           </section>
         </>
