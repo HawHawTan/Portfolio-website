@@ -49,7 +49,6 @@ const Home = () => {
           ease: "power3.out",
         }
       ).to("#wave-text span", {
-        // textShadow: " 5px 2px 0px  #c7deff50",
         y: 15,
         duration: 0.7,
         stagger: 0.1,

@@ -11,6 +11,8 @@
         position: relative;
         width: 15.625rem; // is good
         cursor: pointer;
+        transition: box-shadow 0.5s ease-in-out;
+        
         // margin: 0 auto;
         @include border-radius(1.5px,$white-color, 3.125rem);
         a{
@@ -29,7 +31,6 @@
         }
         #more-details-button::after{
             margin-left: 0.5rem;
-            content: "→";
         }
         #more-details-button,#button{
             padding: 1rem 0;
@@ -37,14 +38,8 @@
             margin-right: 2rem;
             text-align: right;
         }
-        &:nth-child(odd){
-            #more-details-button::before{
-                margin-right: 0.5rem;
-                content: "←";
-            }
-            #more-details-button::after{
-                content: " ";
-            }
+        &:hover{
+            box-shadow: 5px 2px 15px 8px $secondary-color;
         }
     }
 }
