@@ -33,7 +33,7 @@ const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
   }, [restPath]);
 
   const handleClick = (index, slug) => {
-    clickThenMoveRightOrLeft(index, () => navigate(`/works/${slug}`)); // Animate and it move right to the single page
+    clickThenMoveRightOrLeft(index, () => navigate(`/Projects/${slug}`)); // Animate and it move right to the single page
   };
 
   return (

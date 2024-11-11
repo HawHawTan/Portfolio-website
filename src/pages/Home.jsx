@@ -76,7 +76,7 @@ const Home = () => {
               </div>
             </h1>
             <p>{restData.acf.specializes_title}</p>
-            <ScrollDown/>
+            <ScrollDown aria-label="Scroll down to explore more content"/>
             </section>
           <section id="home-page-work">
             <h2>Feature Projects</h2>

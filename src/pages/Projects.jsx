@@ -4,7 +4,7 @@ import Loading from '../utilities/Loading'
 import { restBase } from '../utilities/Utilities'
 import Posts from '../components/Posts'
 
-const Works = () => {   
+const Projects = () => {   
     const [isLoaded, setLoadStatus] = useState(false);
     setTimeout(() => {
     setLoadStatus(true);
@@ -12,8 +12,8 @@ const Works = () => {
     return (
         <>
         {isLoaded ?(
-            <section id="Works">
-                <h1>Works</h1>
+            <section id="Projects">
+                <h1>Projects</h1>
                 <Posts />   
             </section>
 
@@ -24,4 +24,4 @@ const Works = () => {
     )
 }
 
-export default Works
+export default Projects

@@ -43,7 +43,7 @@ function UpNext({ slug }) {
 
   const handleClick = (nextSlug) => {
     clickThenMoveRightOrLeft(index, () => {
-      navigate(`/works/${nextSlug}`); // Navigate to the next project
+      navigate(`/Projects/${nextSlug}`); // Navigate to the next project
     });
   };
 

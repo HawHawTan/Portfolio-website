@@ -16,6 +16,9 @@ body {
   h2{
     color: $secondary-color;
   }
+  p{
+    line-height: $line-height;
+  }
 
   #vantaBG {
     // position: absolute;

@@ -17,7 +17,7 @@ if (!acfData ) {
           <h1>{acfData.title}</h1>
           <div className='group-inner-content'>
             <h2>Project Overview</h2>
-            <div dangerouslySetInnerHTML={{ __html: acfData.project_overview }}></div> 
+            <p>{acfData.project_overview}</p>
           </div>
           {/* <p>{acfData.project_overview}</p> */}
           <div className='buttons'>

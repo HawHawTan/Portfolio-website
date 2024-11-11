@@ -4,7 +4,7 @@ import {Helmet} from "react-helmet";
 
 // templates
 import Home from "./pages/Home";
-import Works from "./pages/Works";
+import Projects from "./pages/Projects";
 import AboutMe from "./pages/About-Me";
 import Footer from "./pages/Footer";
  
@@ -32,18 +32,16 @@ function App() {
   return (
     <>
       {/* add a screen reader fix */}
-      <Background />
-      <ScrollToTop />
       {/* <SiteIcon/> */}
       <header id="masthead" className="site-header">
         <div className="site-branding"></div>
-        <nav className="site-navigation">
+        <nav className="site-navigation" role="navigation">
           <ul>
             <li>
               <NavLink to="/" aria-label="Home" end> Home </NavLink>
             </li>
             <li>
-              <NavLink to="/Works" aria-label="Works">Works </NavLink>
+              <NavLink to="/Projects" aria-label="Projects">Projects </NavLink>
             </li>
             <li>
               <NavLink to="/AboutMe" aria-label="About Me">About Me</NavLink>
@@ -54,12 +52,14 @@ function App() {
       </header>
       {/* <main style={{ backgroundPosition: `0% ${scrollY / 30}%` }}> */}
       <main>
+      <Background />
+      <ScrollToTop />
         {/* <img src={logo} alt="Icon" id="top-left-icon" /> */}
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Works" element={<Works />} />
-          <Route path="/Works/:slug" element={<SinglePage />} />
+          <Route path="/Projects" element={<Projects />} />
+          <Route path="/Projects/:slug" element={<SinglePage />} />
           <Route path="/AboutMe" element={<AboutMe />} />
           {/*<Route path='/contact' element={<Contact />} /> */}
         </Routes>
