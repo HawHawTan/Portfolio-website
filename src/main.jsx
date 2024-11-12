@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import Background from "./utilities/3DBackground";
+import ScrollToTop from "./utilities/ScrollToTop";
   
 import "./style/App.scss";
 import { BrowserRouter } from "react-router-dom";

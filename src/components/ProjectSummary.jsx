@@ -10,16 +10,17 @@ const ProjectSummary = ({ acfData, fieldKey, title }) => {
   // need to change it to dl
   return (
     <div className="projectSummary">
-      <h2>{title}</h2>
+      <h2 tabIndex={0}>{title}</h2>
       <dl>
         {acfData[fieldKey].map((feature, index) => (
           <div
             key={index}
             className="blue-border"
             ref={(el) => (refs.current[index] = el)}
+            tabIndex={0}
           >
-            <dt>{feature.title}: </dt>
-            <dd className="description-text">{feature.description}</dd>
+            <dt >{feature.title}: </dt>
+            <dd className="description-text" tabIndex="0">{feature.description}</dd>
           </div>
         ))}
       </dl>

@@ -35,3 +35,25 @@
     }
   }
 }
+
+@media (min-width:78.125rem){
+  .work-page-section {
+    .work-page {
+      
+      #featuredImg{
+        width: 25rem;
+      }
+    }
+  }
+} 
+
+@media (min-width:81.25rem){
+  .work-page-section {
+    .work-page {
+      #featuredImg{
+        width: 26rem;
+      }
+    }
+  }
+  
+} 

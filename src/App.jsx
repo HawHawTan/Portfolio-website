@@ -31,37 +31,30 @@ function App() {
 
   return (
     <>
-      {/* add a screen reader fix */}
-      {/* <SiteIcon/> */}
+      <Background />
+      {/* <ScrollToTop /> */}
+      <a href="#main-content" className="skip-to-content">
+          Skip to main content
+        </a>
       <header id="masthead" className="site-header">
-        <div className="site-branding"></div>
         <nav className="site-navigation" role="navigation">
           <ul>
-            <li>
-              <NavLink to="/" aria-label="Home" end> Home </NavLink>
-            </li>
-            <li>
-              <NavLink to="/Projects" aria-label="Projects">Projects </NavLink>
-            </li>
-            <li>
-              <NavLink to="/AboutMe" aria-label="About Me">About Me</NavLink>
-            </li>
-            {/* <li><NavLink to='/contact'>Contact</NavLink></li> */}
+            <li><NavLink to="/" aria-label="Home" end> Home </NavLink></li>
+            <li><NavLink to="/Projects" aria-label="Projects">Projects </NavLink></li>
+            <li><NavLink to="/AboutMe" aria-label="About Me">About Me</NavLink></li>
           </ul>
         </nav>
       </header>
       {/* <main style={{ backgroundPosition: `0% ${scrollY / 30}%` }}> */}
       <main>
-      <Background />
-      <ScrollToTop />
-        {/* <img src={logo} alt="Icon" id="top-left-icon" /> */}
+     
 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Projects" element={<Projects />} />
           <Route path="/Projects/:slug" element={<SinglePage />} />
           <Route path="/AboutMe" element={<AboutMe />} />
-          {/*<Route path='/contact' element={<Contact />} /> */}
+          <Route path="*" element={<Home />} /> {/*need to make a 404 page*/}
         </Routes>
       </main>
       <Footer/>

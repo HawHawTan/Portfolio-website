@@ -3,14 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { restBase } from "../utilities/Utilities";
 import FeaturedImage from "../utilities/FeaturedImage";
 
-import GsapAnimation from "./animation/LeftToRightAnimation"; 
+import GsapAnimation from "./animation/LeftToRightAnimation";
 
 const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
   const restPath = `${restBase}posts?_embed`;
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
 
-  const { refs,  clickThenMoveRightOrLeft } = GsapAnimation(restData);
+  const { refs, clickThenMoveRightOrLeft } = GsapAnimation(restData);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -45,7 +45,14 @@ const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
               key={post.id}
               className={`${whichPage}`}
               ref={(el) => (refs.current[index] = el)}
+              // if user press enter
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleClick(index, post.slug);
+                }
+              }}
               onClick={() => handleClick(index, post.slug)}
+              tabIndex={0}
             >
               {}
               {post.featured_media !== 0 && post._embedded && (

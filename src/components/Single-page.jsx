@@ -46,7 +46,7 @@ const SinglePage = () => {
       <section id={`post-${restData.id}`} className="single-page">
         <ProjectOverview acfData={acfData} />
       </section>
-      <div id="projectSummary-div">
+      <div id="projectSummary-div" aria-labelledby="project Summary">
         {acfData && (
           <>
             <ProjectSummary

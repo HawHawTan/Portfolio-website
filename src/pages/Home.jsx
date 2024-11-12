@@ -78,7 +78,7 @@ const Home = () => {
             <p>{restData.acf.specializes_title}</p>
             <ScrollDown aria-label="Scroll down to explore more content"/>
             </section>
-          <section id="home-page-work">
+          <section id ="main-content" class="home-page-work" >
             <h2>Feature Projects</h2>
             <Posts whichPage="home-posts" numberOfProject="2" />
           </section>

@@ -12,7 +12,7 @@ const Projects = () => {
     return (
         <>
         {isLoaded ?(
-            <section id="Projects">
+            <section id="main-content">
                 <h1>Projects</h1>
                 <Posts />   
             </section>
