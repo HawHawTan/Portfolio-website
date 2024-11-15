@@ -15,7 +15,7 @@
     }
     .scrollDown-container{
         position: absolute;
-        bottom: 6rem;
+        bottom: 10rem;
         img{
             width: 1.875rem;
         }
@@ -27,5 +27,9 @@
         h1{
             font-size: $tablet-h1-font;
           }
+          .scrollDown-container{
+            bottom: 6rem;
+           
+        } 
     }
 }
