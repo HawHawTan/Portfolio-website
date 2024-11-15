@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { restBase } from "../utilities/Utilities";
 import { gsap } from "gsap/dist/gsap";
 import { useGSAP } from '@gsap/react';
+const restBase = import.meta.env.VITE_URL;
 
 import Posts from "../components/Posts";
 import Contact from "./Footer";
@@ -20,9 +20,6 @@ const Home = () => {
         if (response.ok) {
           const data = await response.json();
           setData(data); // Set the data once fetched
-          console.log(data);
-          console.log(data.acf);
-          
           // setTimeout(() => {
           //   setIsLoading(false); // Disable loading after delay
           // }, 800); 

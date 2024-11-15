@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 // import Loading from '../utilities/Loading'
-import { restBase } from "../utilities/Utilities";
+const restBase = import.meta.env.VITE_URL;
 
 // icon
 import Email from "../assets/svg/email.svg?react";

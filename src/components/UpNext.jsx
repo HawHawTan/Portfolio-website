@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { restBase } from "../utilities/Utilities";
 import { useNavigate } from "react-router-dom";
 import FeaturedImage from "../utilities/FeaturedImage";
+const restBase = import.meta.env.VITE_URL;
+
 import GsapAnimation from "./animation/LeftToRightAnimation"; //made a hook for this
 
 function UpNext({ slug }) {

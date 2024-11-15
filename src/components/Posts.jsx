@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { restBase } from "../utilities/Utilities";
 import FeaturedImage from "../utilities/FeaturedImage";
+const restBase = import.meta.env.VITE_URL;
 
 import GsapAnimation from "./animation/LeftToRightAnimation";
 
 const Posts = ({ whichPage = "work-page", numberOfProject = "5" }) => {
+
   const restPath = `${restBase}posts?_embed`;
   const [restData, setData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);

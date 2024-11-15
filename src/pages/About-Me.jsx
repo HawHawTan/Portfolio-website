@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Loading from "../utilities/Loading";
-import { restBase } from "../utilities/Utilities";
 import BottomToTopAnimation from "../components/animation/BottomToTopAnimation";
+const restBase = import.meta.env.VITE_URL;
 
 const AboutMe = () => {
   const restPath = restBase + "pages/11";

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { restBase } from "../utilities/Utilities";
+const restBase = import.meta.env.VITE_URL;
 
 import Loading from '../utilities/Loading';
 import ProjectSummary from "./ProjectSummary";
