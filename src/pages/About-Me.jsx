@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import Loading from "../utilities/Loading";
 import BottomToTopAnimation from "../components/animation/BottomToTopAnimation";
+import { Helmet } from "react-helmet";
 const restBase = import.meta.env.VITE_URL;
 
 const AboutMe = () => {
   const restPath = restBase + "pages/11";
   const [acfData, setAcfData] = useState([]);
   const [isLoaded, setLoadStatus] = useState(false);
+  const [yoastData, setYoastData] = useState(null);
 
   // Only trigger BottomToTopAnimation after isLoaded is true
   const { refs } = BottomToTopAnimation(isLoaded);
@@ -16,6 +18,9 @@ const AboutMe = () => {
       const response = await fetch(restPath);
       if (response.ok) {
         const data = await response.json();
+        setYoastData(data.yoast_head_json);
+        const yoastData = data.yoast_head_json;
+        console.log("Yoast SEO Data:", yoastData);
         setAcfData(data.acf);
         setTimeout(() => setLoadStatus(true), 1500);
       }
@@ -25,6 +30,14 @@ const AboutMe = () => {
 
   return (
     <>
+     {yoastData && (
+      <Helmet>
+        <title>{yoastData.title}</title>
+        <meta name="description" content={yoastData.description} />
+        <link rel="canonical" href="https://hawhawtan.com/AboutMe"/>
+        {/* Add Open Graph and Twitter meta tags as needed */}
+      </Helmet>
+      )}
       {isLoaded ? (
         <>
           <h1>About Me</h1>

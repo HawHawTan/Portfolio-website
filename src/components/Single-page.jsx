@@ -6,6 +6,7 @@ import Loading from '../utilities/Loading';
 import ProjectSummary from "./ProjectSummary";
 import ProjectOverview from "./ProjectOverview";
 import UpNext from "./UpNext";
+import { Helmet } from "react-helmet";
 
 const SinglePage = () => {
   const { slug } = useParams(); // Dynamically gets slug from URL
@@ -15,6 +16,8 @@ const SinglePage = () => {
   const [isLoaded, setLoadStatus] = useState(false);
   const [acfData, setAcfData] = useState(null);
   const [showContent, setShowContent] = useState(false);
+  const [yoastData, setYoastData] = useState(null);
+  const [featureImg, setFeatureImg] = useState(null);
 
   useEffect(() => {
     setShowContent(false); // Reset the content display
@@ -26,7 +29,12 @@ const SinglePage = () => {
         setData(data[0]);
         setAcfData(data[0].acf);
         setLoadStatus(true);
-
+        setYoastData(data[0]?.yoast_head_json);
+        setFeatureImg(data[0].acf.image.filename);
+      
+        console.log('====================================');
+        console.log(data[0]);
+        console.log('====================================');
         setTimeout(() => {
           setShowContent(true);
         }, 1500);
@@ -41,6 +49,15 @@ const SinglePage = () => {
 
   return (
    <>
+     {yoastData && (
+      <Helmet>
+        <title>{yoastData.title}</title>
+        <meta name="description" content={yoastData.description} />
+        <meta property="og:image" content={featureImg} />
+        <link rel="canonical" href={`https://hawhawtan.com/Projects/${restData.slug}`} />
+        {/* Add Open Graph and Twitter meta tags as needed */}
+      </Helmet>
+    )}
     {showContent ? (
       <>
       <section id={`post-${restData.id}`} className="single-page">

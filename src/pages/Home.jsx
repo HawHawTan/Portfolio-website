@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { useGSAP } from '@gsap/react';
+import { Helmet } from "react-helmet";
+
 const restBase = import.meta.env.VITE_URL;
 
 import Posts from "../components/Posts";
-import Contact from "./Footer";
-import Loading from "../utilities/Loading";
 import ScrollDown from "../utilities/ScrollDown";
 
 const Home = () => {
   const restPath = restBase + "pages/9";
   const [restData, setData] = useState(null); // Use null initially
-  // const [isLoading, setIsLoading] = useState(true); 
+  const [yoastData, setYoastData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,10 +19,8 @@ const Home = () => {
         const response = await fetch(restPath);
         if (response.ok) {
           const data = await response.json();
-          setData(data); // Set the data once fetched
-          // setTimeout(() => {
-          //   setIsLoading(false); // Disable loading after delay
-          // }, 800); 
+          setYoastData(data.yoast_head_json);
+          setData(data); 
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -64,6 +62,13 @@ const Home = () => {
     ));
   return (
     <>
+      {yoastData && (
+        <Helmet>
+          <title>{yoastData.title}</title>
+          <meta name="description" content={yoastData.description} />
+          <link rel="canonical" href="https://hawhawtan.com/"/>
+        </Helmet>
+      )}
       {restData &&(
         <>
           <section id="title">
@@ -75,7 +80,7 @@ const Home = () => {
             <p>{restData.acf.specializes_title}</p>
             <ScrollDown aria-label="Scroll down to explore more content"/>
             </section>
-          <section id ="main-content" class="home-page-work" >
+          <section id ="main-content" className="home-page-work" >
             <h2>Feature Projects</h2>
             <Posts whichPage="home-posts" numberOfProject="2" />
           </section>

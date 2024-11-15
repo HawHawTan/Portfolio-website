@@ -23,9 +23,6 @@ function UpNext({ slug }) {
         const currentIndex = data.findIndex((post) => post.slug === slug);
         setIndex(currentIndex);
         setData(data);
-        console.log("====================================");
-        console.log(data);
-        console.log("====================================");
         // Set the next project based on the current index
         if (
           currentIndex !== -1 &&
